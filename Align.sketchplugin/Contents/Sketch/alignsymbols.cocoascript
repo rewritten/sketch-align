@@ -5,13 +5,8 @@ var onRun = function(context) {
   var tX = 0
   var doc = context.document
   var i = 0
-  var layers = null
+  var layers = doc.currentPage().layers()
   var layersMeta = []
-
-  do {
-    doc.pages()[i].name() == "Symbols" ? layers = doc.pages()[i].layers() : i++
-  }
-  while (i < doc.pages().length && layers == null)
 
   for (i = 0; i < layers.length; i++) {
       var layer = layers[i]
